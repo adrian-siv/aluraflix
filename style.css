@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+  }
+
 body {
     font-family: "Roboto Mono", monospace;
     text-align: center;
@@ -33,12 +38,21 @@ body {
     top: 10px;
     right: 10px;
   }
-  
-  body > img {
-    margin: 0 10px;
-  }
+
   
   img {
     max-height: 250px;
   }
+
   
+  .container_todosFilmes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .container_filme{
+     padding: 2%;
+     display: block;
+     max-width: 30%;
+  }
