@@ -10,18 +10,16 @@ function verificaLink() {
     }
 }
 
-document.write('<div class="container_todosFilmes">')
+document.write('<div class="container-todos-filmes">')
 
-var i = 0;
-while (i < listaFilmes.length) {
-        document.write('<div class="container_filme">')
-        document.write('<img src=' + listaFilmes[i] + '>');
-        document.write('<p>' + listaNomeFilmes[i] + '</p>'); 
-        document.write('</div>')
-        i++;
-    }
-document.write('</div>')
-    
+for (i = 0; i < listaFilmes.length; i++) {
+    document.write("<div class='container-filme'>")
+    document.write("<img src =" + listaFilmes[i] + ">");
+    document.write("<p>" + listaNomeFilmes[i] + "</p>");
+    document.write("</div>");
+}
+document.write("</div>")
+
 /* Populando a lista utilizando PUSH 
 var listaFilmes = [];
 

@@ -44,15 +44,12 @@ body {
     max-height: 250px;
   }
 
-  
-  .container_todosFilmes{
+  .container-todos-filmes{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  
-  .container_filme{
-     padding: 2%;
-     display: block;
-     max-width: 30%;
+
+  .container-filme {
+    max-width: 25%;
   }
