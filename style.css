@@ -62,10 +62,12 @@ body {
   padding: 1em 2em;
   margin: 1em 0 0;
   border: none;
-  background-color: red;
+  background-color: rgb(218, 30, 38);
   color: white;
   font-weight: bold;
 }
+
+/* Estilizar a transformação do botão com hover */
 
 img {
   max-height: 250px;
