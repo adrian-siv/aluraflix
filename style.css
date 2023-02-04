@@ -1,55 +1,82 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
 
 body {
-    font-family: "Roboto Mono", monospace;
-    text-align: center;
-    background-image: url("https://caelum-online-public.s3.amazonaws.com/assets-imersaodev/background-aluraflix.png");
-    background-color: #000000;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-  }
-  
-  .container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .page-title {
-    color: #ffffff;
-    margin: 0 0 5px;
-  }
-  
-  .page-subtitle {
-    color: #ffffff;
-    margin-top: 5px;
-  }
-  
-  .page-logo {
-    width: 200px;
-  }
-  
-  .alura-logo {
-    width: 40px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  background-image: url("https://caelum-online-public.s3.amazonaws.com/assets-imersaodev/background-aluraflix.png");
+  background-color: #000000;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  color: white;
+}
 
-  
-  img {
-    max-height: 250px;
-  }
+.container {
+  text-align: center;
+  padding: 20px 20px 10px;
+}
 
-  .container-todos-filmes{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+.page-title {
+  color: #ffffff;
+  margin: 0 0 5px;
+}
 
-  .container-filme {
-    max-width: 25%;
-  }
+.page-subtitle {
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.page-logo {
+  width: 200px;
+}
+
+.alura-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.inserir-filme {
+  margin: 0 auto 2em;
+}
+
+.inserir-filme label {
+  font-weight: bold;
+}
+
+.inserir-filme input, .inserir-filme label {
+  display: block;
+  margin: 0.5em auto;
+}
+
+.inserir-filme input {
+  width: 25%;
+  padding: 0.5em 0.2em;
+}
+
+.botao-inserir-filme {
+  padding: 1em 2em;
+  margin: 1em 0 0;
+  border: none;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+img {
+  max-height: 250px;
+}
+
+.container-todos-filmes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.container-filme {
+  max-width: 25%;
+}
