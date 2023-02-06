@@ -10,7 +10,7 @@ function verificaLink() {
     }
 }
 
-document.write('<div class="container-todos-filmes">')
+document.write('<div id="container-todos-filmes">')
 
 for (i = 0; i < listaFilmes.length; i++) {
     document.write("<div class='container-filme'>")
@@ -20,19 +20,24 @@ for (i = 0; i < listaFilmes.length; i++) {
 }
 document.write("</div>")
 
+var i = 0;
+
 function inserirFilme() {
     var nomeFilme = document.getElementById("nome-filme").value;
     var imagemFilme = document.getElementById("imagem-filme").value;
-    
-    // document.write("<div class='container-filme'>")
-    // document.write("</div>");
-    
+
+    var containerTodosFilmes = document.getElementById("container-todos-filmes");
+
+    containerTodosFilmes.innerHTML = containerTodosFilmes.innerHTML + `<div id='container-${i} class='container-filme'></div>`;
+
     // var containerFilme = document.getElementsByClassName("container-filme");
 
     // containerFilme.innerHTML = (`<img src=${imagemFilme}>`);
 
-    
 
-    console.log (nomeFilme);
-    console.log (imagemFilme);
+
+    console.log(nomeFilme);
+    console.log(imagemFilme);
+
+    i++;
 }

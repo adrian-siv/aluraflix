@@ -78,7 +78,7 @@ img {
   max-height: 250px;
 }
 
-.container-todos-filmes {
+#container-todos-filmes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -86,4 +86,5 @@ img {
 
 .container-filme {
   max-width: 25%;
+  display: inline;
 }
