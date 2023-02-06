@@ -10,33 +10,44 @@ function verificaLink() {
     }
 }
 
-document.write('<div id="container-todos-filmes">')
+document.write("<div id='container-todos-filmes'>")
 
 for (i = 0; i < listaFilmes.length; i++) {
-    document.write("<div class='container-filme'>")
-    document.write("<img src =" + listaFilmes[i] + ">");
-    document.write("<p>" + listaNomeFilmes[i] + "</p>");
+    document.write(`<div id='container-filme-${i + 1}' class='container-filme'>`)
+    document.write(`<img src =${listaFilmes[i]}>`);
+    document.write(`<p class='nomes-filmes'>${listaNomeFilmes[i]}</p>`);
     document.write("</div>");
 }
 document.write("</div>")
 
-var i = 0;
+var i = 6;
 
 function inserirFilme() {
     var nomeFilme = document.getElementById("nome-filme").value;
     var imagemFilme = document.getElementById("imagem-filme").value;
 
+    console.log(listaNomeFilmes);
+
+    for (i = 0; i < listaFilmes.length; i++) {
+        if (nomeFilme == listaNomeFilmes[i]) {
+            alert("Filme repetido!")
+        }
+    }
+
+    listaNomeFilmes.push(nomeFilme);
+
     var containerTodosFilmes = document.getElementById("container-todos-filmes");
 
-    containerTodosFilmes.innerHTML = containerTodosFilmes.innerHTML + `<div id='novo-container-${i}' class='container-filme'></div>`;
+    containerTodosFilmes.innerHTML = containerTodosFilmes.innerHTML + `<div id='container-filme-${i}' class='container-filme'></div>`;
 
-    var containerFilme = document.getElementById(`novo-container-${i}`);
+    var containerFilme = document.getElementById(`container-filme-${i}`);
 
     containerFilme.innerHTML = `<img src=${imagemFilme}>`;
-    containerFilme.innerHTML = containerFilme.innerHTML + `<p>${nomeFilme}</p>`;
+    containerFilme.innerHTML = containerFilme.innerHTML + `<p class="nomes-filmes">${nomeFilme}</p>`;
 
     document.getElementById("nome-filme").value = "";
     document.getElementById("imagem-filme").value = "";
 
     i++;
+
 }
