@@ -59,15 +59,20 @@ body {
 }
 
 .botao-inserir-filme {
-  padding: 1em 2em;
+  font-size: 1.1em;
+  padding: 0.7em 1.4em;
   margin: 1em 0 0;
   border: none;
   background-color: rgb(218, 30, 38);
   color: white;
   font-weight: bold;
+  transition: all 0.5s;
 }
 
-/* Estilizar a transformação do botão com hover */
+.botao-inserir-filme:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
 img {
   max-height: 250px;

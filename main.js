@@ -19,3 +19,20 @@ for (i = 0; i < listaFilmes.length; i++) {
     document.write("</div>");
 }
 document.write("</div>")
+
+function inserirFilme() {
+    var nomeFilme = document.getElementById("nome-filme").value;
+    var imagemFilme = document.getElementById("imagem-filme").value;
+    
+    // document.write("<div class='container-filme'>")
+    // document.write("</div>");
+    
+    // var containerFilme = document.getElementsByClassName("container-filme");
+
+    // containerFilme.innerHTML = (`<img src=${imagemFilme}>`);
+
+    
+
+    console.log (nomeFilme);
+    console.log (imagemFilme);
+}
