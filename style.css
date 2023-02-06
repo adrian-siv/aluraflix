@@ -87,4 +87,6 @@ img {
 .container-filme {
   max-width: 25%;
   display: inline;
+  margin-bottom: 3em;
+  padding: 0 1em;
 }

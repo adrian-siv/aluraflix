@@ -28,13 +28,15 @@ function inserirFilme() {
 
     var containerTodosFilmes = document.getElementById("container-todos-filmes");
 
-    containerTodosFilmes.innerHTML = containerTodosFilmes.innerHTML + `<div id='container-${i} class='container-filme'></div>`;
+    containerTodosFilmes.innerHTML = containerTodosFilmes.innerHTML + `<div id='novo-container-${i}' class='container-filme'></div>`;
 
-    // var containerFilme = document.getElementsByClassName("container-filme");
+    var containerFilme = document.getElementById(`novo-container-${i}`);
 
-    // containerFilme.innerHTML = (`<img src=${imagemFilme}>`);
+    containerFilme.innerHTML = `<img src=${imagemFilme}>`;
+    containerFilme.innerHTML = containerFilme.innerHTML + `<p>${nomeFilme}</p>`;
 
 
+    console.log(containerFilme);
 
     console.log(nomeFilme);
     console.log(imagemFilme);
