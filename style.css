@@ -90,3 +90,7 @@ img {
   margin-bottom: 3em;
   padding: 0 1em;
 }
+
+.container-filme p {
+  max-width: 180px;
+}

@@ -35,11 +35,8 @@ function inserirFilme() {
     containerFilme.innerHTML = `<img src=${imagemFilme}>`;
     containerFilme.innerHTML = containerFilme.innerHTML + `<p>${nomeFilme}</p>`;
 
-
-    console.log(containerFilme);
-
-    console.log(nomeFilme);
-    console.log(imagemFilme);
+    document.getElementById("nome-filme").value = "";
+    document.getElementById("imagem-filme").value = "";
 
     i++;
 }
