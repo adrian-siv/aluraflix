@@ -26,28 +26,27 @@ function inserirFilme() {
     var nomeFilme = document.getElementById("nome-filme").value;
     var imagemFilme = document.getElementById("imagem-filme").value;
 
-    console.log(listaNomeFilmes);
-
-    for (i = 0; i < listaFilmes.length; i++) {
-        if (nomeFilme == listaNomeFilmes[i]) {
+    for (j = 0; j < listaFilmes.length; j++) {
+        if (nomeFilme == listaNomeFilmes[j]) {
             alert("Filme repetido!")
         }
     }
-
+    
     listaNomeFilmes.push(nomeFilme);
-
+    
     var containerTodosFilmes = document.getElementById("container-todos-filmes");
-
+    
     containerTodosFilmes.innerHTML = containerTodosFilmes.innerHTML + `<div id='container-filme-${i}' class='container-filme'></div>`;
-
+    
     var containerFilme = document.getElementById(`container-filme-${i}`);
-
+    
     containerFilme.innerHTML = `<img src=${imagemFilme}>`;
     containerFilme.innerHTML = containerFilme.innerHTML + `<p class="nomes-filmes">${nomeFilme}</p>`;
-
+    
     document.getElementById("nome-filme").value = "";
     document.getElementById("imagem-filme").value = "";
-
+    
     i++;
-
+    
+    console.log(listaNomeFilmes);
 }
