@@ -21,7 +21,6 @@ function verificaLink() {
 }
 
 function inserirFilme() {
-    if (verificaLink()) {
         var nomeFilme = document.getElementById("nome-filme").value;
         var imagemFilme = document.getElementById("imagem-filme").value;
         var filmeRepetido = false;
@@ -34,7 +33,7 @@ function inserirFilme() {
             }
         }
 
-        if (filmeRepetido == false) {
+        if (filmeRepetido == false && verificaLink()) {
             listaNomeFilmes.push(nomeFilme);
             listaImagemFilmes.push(imagemFilme);
 
@@ -54,5 +53,4 @@ function inserirFilme() {
         document.getElementById("imagem-filme").value = "";
 
         console.log(i);
-    }
 }
