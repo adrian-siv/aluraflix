@@ -1,12 +1,15 @@
 var listaImagemFilmes = ["https://img.elo7.com.br/product/zoom/1E0EB9C/poster-cartaz-o-poderoso-chefao-chefao.jpg", "https://br.web.img3.acsta.net/pictures/16/10/06/23/05/054278.jpg", "https://waltermattos.com/site2/wp-content/uploads/2014/11/tut_Analise_Grafica_Cartaz_Interstellar_05_011.png", "https://br.web.img3.acsta.net/medias/nmedia/18/87/02/76/19871246.jpg", "https://i.pinimg.com/474x/b4/25/97/b4259768165c3d8d8365d9c495b507e2.jpg"];
 var listaNomeFilmes = ["O Poderoso Chefão", "A Chegada", "Interestelar", "Cidade de Deus", "Sussurros do Coração"]
 
+var listaTrailers = ["https://www.youtube.com/watch?v=SaHZHU-44XA", "https://www.youtube.com/watch?v=rNciXGzYZms", "https://www.youtube.com/watch?v=BYUZhddDbdc", "https://www.youtube.com/watch?v=nBWtTrLxUjM", "https://www.youtube.com/watch?v=0pVkiod6V0U"]
+
 document.write("<div id='container-todos-filmes'>")
 
 for (i = 0; i < listaImagemFilmes.length; i++) {
     document.write(`<div id='container-filme-${i + 1}' class='container-filme'>`)
     document.write(`<img src =${listaImagemFilmes[i]}>`);
     document.write(`<p class='nomes-filmes'>${listaNomeFilmes[i]}</p>`);
+    document.write(`<a href="${listaTrailers[i]}" target="_blank"><button class='ver-trailer'>Ver Trailer</button></a>`)
     document.write("</div>");
 }
 document.write("</div>")
@@ -45,6 +48,8 @@ function inserirFilme() {
 
             containerFilme.innerHTML = `<img src=${imagemFilme}>`;
             containerFilme.innerHTML = containerFilme.innerHTML + `<p class="nomes-filmes">${nomeFilme}</p>`;
+            containerFilme.innerHTML = containerFilme.innerHTML + `<button class="nomes-filmes">${nomeFilme}</button>`;
+            
 
             i++;
         }
@@ -52,5 +57,4 @@ function inserirFilme() {
         document.getElementById("nome-filme").value = "";
         document.getElementById("imagem-filme").value = "";
 
-        console.log(i);
 }

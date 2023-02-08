@@ -48,7 +48,8 @@ body {
   font-weight: bold;
 }
 
-.inserir-filme input, .inserir-filme label {
+.inserir-filme input,
+.inserir-filme label {
   display: block;
   margin: 0.5em auto;
 }
@@ -89,6 +90,10 @@ img {
   display: inline;
   margin-bottom: 3em;
   padding: 0 1em;
+}
+
+.container-filme img:hover {
+  filter: brightness(0.3);
 }
 
 .container-filme p {
