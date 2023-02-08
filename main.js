@@ -12,43 +12,47 @@ for (i = 0; i < listaImagemFilmes.length; i++) {
 document.write("</div>")
 
 function verificaLink() {
-    for (i = 0; i < listaImagemFilmes.length; i++) {
-        if (listaImagemFilmes[i].endsWith(".jpg") == false) {
-            alert(`Você colocou o formato errado de link no seu ${i + 1}° filme.\nPor favor, insira a url correta no formato válido de imagem (.jpg).`);
-        }
+    if (document.getElementById("imagem-filme").value.endsWith(".jpg") == false && document.getElementById("imagem-filme").value.endsWith(".png") == false) {
+        alert(`Você inseriu um formato errado de link.\nPor favor, insira a url correta no formato válido de imagem (.jpg ou .png).`);
+        return false;
+    } else {
+        return true
     }
 }
 
 function inserirFilme() {
-    verificaLink();
-    var nomeFilme = document.getElementById("nome-filme").value;
-    var imagemFilme = document.getElementById("imagem-filme").value;
-    var filmeRepetido = false;
+    if (verificaLink()) {
+        var nomeFilme = document.getElementById("nome-filme").value;
+        var imagemFilme = document.getElementById("imagem-filme").value;
+        var filmeRepetido = false;
 
-    for (j = 0; j < listaNomeFilmes.length; j++) {
-        if (nomeFilme.toLowerCase() == listaNomeFilmes[j].toLowerCase()) {
-            alert("Este filme já está em nosso catálogo ;)")
-            filmeRepetido = true;
-            break;
+        for (j = 0; j < listaNomeFilmes.length; j++) {
+            if (nomeFilme.toLowerCase() == listaNomeFilmes[j].toLowerCase()) {
+                alert("Este filme já está em nosso catálogo ;)")
+                filmeRepetido = true;
+                break;
+            }
         }
+
+        if (filmeRepetido == false) {
+            listaNomeFilmes.push(nomeFilme);
+            listaImagemFilmes.push(imagemFilme);
+
+            var containerTodosFilmes = document.getElementById("container-todos-filmes");
+
+            containerTodosFilmes.innerHTML = containerTodosFilmes.innerHTML + `<div id='container-filme-${i + 1}' class='container-filme'></div>`;
+
+            var containerFilme = document.getElementById(`container-filme-${i + 1}`);
+
+            containerFilme.innerHTML = `<img src=${imagemFilme}>`;
+            containerFilme.innerHTML = containerFilme.innerHTML + `<p class="nomes-filmes">${nomeFilme}</p>`;
+
+            i++;
+        }
+
+        document.getElementById("nome-filme").value = "";
+        document.getElementById("imagem-filme").value = "";
+
+        console.log(i);
     }
-
-    if (filmeRepetido == false) {
-        listaNomeFilmes.push(nomeFilme);
-        listaImagemFilmes.push(imagemFilme);
-
-        var containerTodosFilmes = document.getElementById("container-todos-filmes");
-
-        containerTodosFilmes.innerHTML = containerTodosFilmes.innerHTML + `<div id='container-filme-${i + 1}' class='container-filme'></div>`;
-
-        var containerFilme = document.getElementById(`container-filme-${i + 1}`);
-
-        containerFilme.innerHTML = `<img src=${imagemFilme}>`;
-        containerFilme.innerHTML = containerFilme.innerHTML + `<p class="nomes-filmes">${nomeFilme}</p>`;
-
-        i++;
-    }
-
-    document.getElementById("nome-filme").value = "";
-    document.getElementById("imagem-filme").value = "";
 }
