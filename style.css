@@ -51,7 +51,7 @@ body {
 .inserir-filme input,
 .inserir-filme label {
   display: block;
-  margin: 0.5em auto;
+  margin: 0.6em auto;
 }
 
 .inserir-filme input {
@@ -105,10 +105,17 @@ img {
   position: relative;
   bottom: 50%;
   visibility: hidden;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.7em;
+  background-color: rgba(233, 211, 211, 0.4);
 }
 
 .ver-trailer a {
   text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 .container-filme:hover .ver-trailer {
