@@ -92,10 +92,26 @@ img {
   padding: 0 1em;
 }
 
-.container-filme img:hover {
+.container-filme:hover img {
+  transition: 0.3s;
   filter: brightness(0.3);
 }
 
 .container-filme p {
   max-width: 180px;
+}
+
+.ver-trailer {
+  position: relative;
+  bottom: 50%;
+  visibility: hidden;
+}
+
+.ver-trailer a {
+  text-decoration: none;
+}
+
+.container-filme:hover .ver-trailer {
+  transition: 2s;
+  visibility: visible;
 }

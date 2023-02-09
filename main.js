@@ -9,7 +9,7 @@ for (i = 0; i < listaImagemFilmes.length; i++) {
     document.write(`<div id='container-filme-${i + 1}' class='container-filme'>`)
     document.write(`<img src =${listaImagemFilmes[i]}>`);
     document.write(`<p class='nomes-filmes'>${listaNomeFilmes[i]}</p>`);
-    document.write(`<a href="${listaTrailers[i]}" target="_blank"><button class='ver-trailer'>Ver Trailer</button></a>`)
+    document.write(`<button class='ver-trailer'><a href="${listaTrailers[i]}" target="_blank">Ver Trailer</a></button>`)
     document.write("</div>");
 }
 document.write("</div>")
