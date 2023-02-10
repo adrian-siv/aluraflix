@@ -10,6 +10,7 @@ for (i = 0; i < listaImagemFilmes.length; i++) {
     document.write(`<img src =${listaImagemFilmes[i]}>`);
     document.write(`<p class='nomes-filmes'>${listaNomeFilmes[i]}</p>`);
     document.write(`<p class='ver-trailer'><a href="${listaTrailerFilmes[i]}" target="_blank">Ver Trailer</a></p>`)
+    document.write(`<button class='botao-remover' onclick="removerFilme()">x</button>`)
     document.write("</div>");
 }
 document.write("</div>")
@@ -50,8 +51,7 @@ function inserirFilme() {
 
             containerFilme.innerHTML = `<img src=${imagemFilme}>`;
             containerFilme.innerHTML = containerFilme.innerHTML + `<p class="nomes-filmes">${nomeFilme}</p>`;
-            containerFilme.innerHTML = containerFilme.innerHTML + `<p class='ver-trailer'><a href="${listaTrailerFilmes[i]}" target="_blank">Ver Trailer</a></p>`;
-            
+            containerFilme.innerHTML = containerFilme.innerHTML + `<p class='ver-trailer'><a href="${listaTrailerFilmes[i]}" target="_blank">Ver Trailer</a></p>`;          
 
             i++;
         }
@@ -59,6 +59,10 @@ function inserirFilme() {
         document.getElementById("nome-filme").value = "";
         document.getElementById("imagem-filme").value = "";
         document.getElementById("trailer-filme").value = "";
-        
+}
 
+function removerFilme() {
+    var filmeRemovido = document.getElementById("container-filme-2");
+
+    filmeRemovido.remove();
 }
