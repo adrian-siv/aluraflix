@@ -10,6 +10,7 @@ for (i = 0; i < listaImagemFilmes.length; i++) {
     document.write(`<img src =${listaImagemFilmes[i]}>`);
     document.write(`<p class='nomes-filmes'>${listaNomeFilmes[i]}</p>`);
     document.write(`<p class='ver-trailer'><a href="${listaTrailerFilmes[i]}" target="_blank">Ver Trailer</a></p>`)
+    document.write("<p class='dica-remover'>Clique para remover o filme</p>")
     document.write(`<button id='botao-remover-${i + 1}' class='botao-remover'>x</button>`)
     document.write("</div>");
 }
@@ -63,13 +64,12 @@ function inserirFilme() {
 
 
 for (let i = 1; i <= listaNomeFilmes.length; i++) {
-    let botaoRemover = document.getElementById(`botao-remover-${i}`);
-    botaoRemover.addEventListener("click", function() {
-      let filmeRemovido = document.getElementById(`container-filme-${i}`);
-      filmeRemovido.remove();
+    document.getElementById(`botao-remover-${i}`).addEventListener("click", function () {
+        if (confirm("Você realmente deseja remover este filme?")) {
+            document.getElementById(`container-filme-${i}`).remove();
+        }
     });
-    console.log(i);
-  }
+}
   
 
 // for (i = 0; i < listaNomeFilmes.length; i++) {

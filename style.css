@@ -123,7 +123,11 @@ img {
   visibility: visible;
 }
 
-.botao-remover {
+.dica-remover {
+  visibility: hidden;
+}
+
+.botao-remover, .dica-remover {
   position: absolute;
   bottom: calc(100% - 22px);
   right: calc(0% + 1px);
@@ -132,6 +136,8 @@ img {
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
 
-  /* Clique para remover o filme */
+.botao-remover:hover ~ .dica-remover {
+  visibility: visible;
 }
