@@ -127,4 +127,11 @@ img {
   position: absolute;
   bottom: calc(100% - 22px);
   right: calc(0% + 1px);
+  background-color: rgb(218, 30, 38);
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* Clique para remover o filme */
 }
