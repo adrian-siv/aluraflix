@@ -10,7 +10,7 @@ for (i = 0; i < listaImagemFilmes.length; i++) {
     document.write(`<img src =${listaImagemFilmes[i]}>`);
     document.write(`<p class='nomes-filmes'>${listaNomeFilmes[i]}</p>`);
     document.write(`<p class='ver-trailer'><a href="${listaTrailerFilmes[i]}" target="_blank">Ver Trailer</a></p>`)
-    document.write(`<button class='botao-remover' onclick="removerFilme()">x</button>`)
+    document.write(`<button id='botao-remover-${i + 1}' class='botao-remover'>x</button>`)
     document.write("</div>");
 }
 document.write("</div>")
@@ -30,8 +30,8 @@ function inserirFilme() {
         var trailerFilme = document.getElementById("trailer-filme").value;
         var filmeRepetido = false;
 
-        for (j = 0; j < listaNomeFilmes.length; j++) {
-            if (nomeFilme.toLowerCase() == listaNomeFilmes[j].toLowerCase()) {
+        for (let i = 0; i < listaNomeFilmes.length; i++) {
+            if (nomeFilme.toLowerCase() == listaNomeFilmes[i].toLowerCase()) {
                 alert("Este filme já está em nosso catálogo ;)")
                 filmeRepetido = true;
                 break;
@@ -61,8 +61,26 @@ function inserirFilme() {
         document.getElementById("trailer-filme").value = "";
 }
 
-function removerFilme() {
-    var filmeRemovido = document.getElementById("container-filme-2");
 
-    filmeRemovido.remove();
-}
+for (let i = 1; i <= listaNomeFilmes.length; i++) {
+    let botaoRemover = document.getElementById(`botao-remover-${i}`);
+    botaoRemover.addEventListener("click", function() {
+      let filmeRemovido = document.getElementById(`container-filme-${i}`);
+      filmeRemovido.remove();
+    });
+    console.log(i);
+  }
+  
+
+// for (i = 0; i < listaNomeFilmes.length; i++) {
+// document.getElementById(`botao-remover-${i + 1}`).addEventListener("click", function() {idFilme = `olá, ${i + 1}`; console.log(idFilme)});
+// }
+
+// function removerFilme() {
+      
+    
+//     var filmeRemovido = document.getElementById("container-filme-2");
+
+//     filmeRemovido.remove();
+// }
+
