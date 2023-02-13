@@ -1,7 +1,7 @@
 var listaNomeJogadores = ["Lebron James", "Kobe Bryant", "Michael Jordan", "Ja Morant", "Giannis Antetokounmpo"]
 var listaImagemJogadores = ["https://i.ebayimg.com/images/g/bgwAAOSwTJJeRuHs/s-l1600.jpg", "https://api.time.com/wp-content/uploads/2016/04/wally-skalij.jpg", "https://ae01.alicdn.com/kf/HTB1WvhVKFXXXXb5XVXXq6xXFXXXe/P1031-16x20-Michael-Jordan-Chicago-Flying-Dunk-Free-throw-Line-Posters-Canvas-College-Dorm-Decor.jpg", "https://static01.nyt.com/images/2022/04/15/sports/15nba-playoffs-morant2/15nba-playoffs-morant2-mobileMasterAt3x.jpg", "https://cdn.britannica.com/53/232053-050-024C0309/Giannis-Antetokounmpo-Milwaukee-Bucks-2021-NBA.jpg"];
 
-var listaHighlightsJogadores = ["https://www.youtube.com/watch?v=QwGf3ZH1ZUQ", "https://www.youtube.com/watch?v=0vpzl4MFPg0", "https://www.youtube.com/watch?v=ngGaY0uxDyk", "https://www.youtube.com/watch?v=nBWtTrLxUjM", "https://www.youtube.com/watch?v=0pVkiod6V0U"]
+var listaHighlightsJogadores = ["https://www.youtube.com/watch?v=QwGf3ZH1ZUQ", "https://www.youtube.com/watch?v=0vpzl4MFPg0", "https://www.youtube.com/watch?v=ngGaY0uxDyk", "https://www.youtube.com/watch?v=lJELCNn5aUc", "https://www.youtube.com/watch?v=z9l6_7wc8jo"]
 
 document.write("<div id='container-todos-jogadores'>")
 
