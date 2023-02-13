@@ -1,23 +1,23 @@
-var listaImagemFilmes = ["https://img.elo7.com.br/product/zoom/1E0EB9C/poster-cartaz-o-poderoso-chefao-chefao.jpg", "https://br.web.img3.acsta.net/pictures/16/10/06/23/05/054278.jpg", "https://waltermattos.com/site2/wp-content/uploads/2014/11/tut_Analise_Grafica_Cartaz_Interstellar_05_011.png", "https://br.web.img3.acsta.net/medias/nmedia/18/87/02/76/19871246.jpg", "https://i.pinimg.com/474x/b4/25/97/b4259768165c3d8d8365d9c495b507e2.jpg"];
-var listaNomeFilmes = ["O Poderoso Chefão", "A Chegada", "Interestelar", "Cidade de Deus", "Sussurros do Coração"]
+var listaNomeJogadores = ["Lebron James", "Kobe Bryant", "Michael Jordan", "Ja Morant", "Giannis Antetokounmpo"]
+var listaImagemJogadores = ["https://i.ebayimg.com/images/g/bgwAAOSwTJJeRuHs/s-l1600.jpg", "https://api.time.com/wp-content/uploads/2016/04/wally-skalij.jpg", "https://ae01.alicdn.com/kf/HTB1WvhVKFXXXXb5XVXXq6xXFXXXe/P1031-16x20-Michael-Jordan-Chicago-Flying-Dunk-Free-throw-Line-Posters-Canvas-College-Dorm-Decor.jpg", "https://static01.nyt.com/images/2022/04/15/sports/15nba-playoffs-morant2/15nba-playoffs-morant2-mobileMasterAt3x.jpg", "https://cdn.britannica.com/53/232053-050-024C0309/Giannis-Antetokounmpo-Milwaukee-Bucks-2021-NBA.jpg"];
 
-var listaTrailerFilmes = ["https://www.youtube.com/watch?v=SaHZHU-44XA", "https://www.youtube.com/watch?v=rNciXGzYZms", "https://www.youtube.com/watch?v=BYUZhddDbdc", "https://www.youtube.com/watch?v=nBWtTrLxUjM", "https://www.youtube.com/watch?v=0pVkiod6V0U"]
+var listaHighlightsJogadores = ["https://www.youtube.com/watch?v=QwGf3ZH1ZUQ", "https://www.youtube.com/watch?v=0vpzl4MFPg0", "https://www.youtube.com/watch?v=ngGaY0uxDyk", "https://www.youtube.com/watch?v=nBWtTrLxUjM", "https://www.youtube.com/watch?v=0pVkiod6V0U"]
 
-document.write("<div id='container-todos-filmes'>")
+document.write("<div id='container-todos-jogadores'>")
 
-for (i = 0; i < listaImagemFilmes.length; i++) {
-    document.write(`<div id='container-filme-${i + 1}' class='container-filme'>`)
-    document.write(`<img src =${listaImagemFilmes[i]}>`);
-    document.write(`<p class='nomes-filmes'>${listaNomeFilmes[i]}</p>`);
-    document.write(`<p class='ver-trailer'><a href="${listaTrailerFilmes[i]}" target="_blank">Ver Trailer</a></p>`)
-    document.write("<p class='dica-remover'>Clique para remover o filme</p>")
+for (i = 0; i < listaImagemJogadores.length; i++) {
+    document.write(`<div id='container-jogador-${i + 1}' class='container-jogador'>`)
+    document.write(`<img src =${listaImagemJogadores[i]}>`);
+    document.write(`<p class='nomes-jogadores'>${listaNomeJogadores[i]}</p>`);
+    document.write(`<p class='ver-highlights'><a href="${listaHighlightsJogadores[i]}" target="_blank">Ver Highlights</a></p>`)
+    document.write("<p class='dica-remover'>Clique para remover o jogador</p>")
     document.write(`<button id='botao-remover-${i + 1}' class='botao-remover'>x</button>`)
     document.write("</div>");
 }
 document.write("</div>")
 
 function verificaLink() {
-    if (document.getElementById("imagem-filme").value.endsWith(".jpg") == false && document.getElementById("imagem-filme").value.endsWith(".png") == false) {
+    if (document.getElementById("imagem-jogador").value.endsWith(".jpg") == false && document.getElementById("imagem-jogador").value.endsWith(".png") == false) {
         alert(`Você inseriu um formato errado de link.\nPor favor, insira a url correta no formato válido de imagem (.jpg ou .png).`);
         return false;
     } else {
@@ -25,62 +25,48 @@ function verificaLink() {
     }
 }
 
-function inserirFilme() {
-        var nomeFilme = document.getElementById("nome-filme").value;
-        var imagemFilme = document.getElementById("imagem-filme").value;
-        var trailerFilme = document.getElementById("trailer-filme").value;
-        var filmeRepetido = false;
+function inserirJogador() {
+        var nomeJogador = document.getElementById("nome-jogador").value;
+        var imagemJogador = document.getElementById("imagem-jogador").value;
+        var highlightsJogador = document.getElementById("highlights-jogador").value;
+        var jogadorRepetido = false;
 
-        for (let i = 0; i < listaNomeFilmes.length; i++) {
-            if (nomeFilme.toLowerCase() == listaNomeFilmes[i].toLowerCase()) {
-                alert("Este filme já está em nosso catálogo ;)")
-                filmeRepetido = true;
+        for (let i = 0; i < listaNomeJogadores.length; i++) {
+            if (nomeJogador.toLowerCase() == listaNomeJogadores[i].toLowerCase()) {
+                alert("Os highlights deste jogador já estão em nosso catálogo ;)")
+                jogadorRepetido = true;
                 break;
             }
         }
 
-        if (filmeRepetido == false && verificaLink()) {
-            listaNomeFilmes.push(nomeFilme);
-            listaImagemFilmes.push(imagemFilme);
-            listaTrailerFilmes.push(trailerFilme);
+        if (jogadorRepetido == false && verificaLink()) {
+            listaNomeJogadores.push(nomeJogador);
+            listaImagemJogadores.push(imagemJogador);
+            listaHighlightsJogadores.push(highlightsJogador);
 
-            var containerTodosFilmes = document.getElementById("container-todos-filmes");
+            var containerTodosJogadores = document.getElementById("container-todos-jogadores");
 
-            containerTodosFilmes.innerHTML = containerTodosFilmes.innerHTML + `<div id='container-filme-${i + 1}' class='container-filme'></div>`;
+            containerTodosJogadores.innerHTML = containerTodosJogadores.innerHTML + `<div id='container-jogador-${i + 1}' class='container-jogador'></div>`;
 
-            var containerFilme = document.getElementById(`container-filme-${i + 1}`);
+            var containerJogador = document.getElementById(`container-jogador-${i + 1}`);
 
-            containerFilme.innerHTML = `<img src=${imagemFilme}>`;
-            containerFilme.innerHTML = containerFilme.innerHTML + `<p class="nomes-filmes">${nomeFilme}</p>`;
-            containerFilme.innerHTML = containerFilme.innerHTML + `<p class='ver-trailer'><a href="${listaTrailerFilmes[i]}" target="_blank">Ver Trailer</a></p>`;          
+            containerJogador.innerHTML = `<img src=${imagemJogador}>`;
+            containerJogador.innerHTML = containerJogador.innerHTML + `<p class="nomes-jogadores">${nomeJogador}</p>`;
+            containerJogador.innerHTML = containerJogador.innerHTML + `<p class='ver-highlights'><a href="${listaHighlightsJogadores[i]}" target="_blank">Ver Highlights</a></p>`;          
 
             i++;
         }
 
-        document.getElementById("nome-filme").value = "";
-        document.getElementById("imagem-filme").value = "";
-        document.getElementById("trailer-filme").value = "";
+        document.getElementById("nome-jogador").value = "";
+        document.getElementById("imagem-jogador").value = "";
+        document.getElementById("highlights-jogador").value = "";
 }
 
 
-for (let i = 1; i <= listaNomeFilmes.length; i++) {
+for (let i = 1; i <= listaNomeJogadores.length; i++) {
     document.getElementById(`botao-remover-${i}`).addEventListener("click", function () {
-        if (confirm("Você realmente deseja remover este filme?")) {
-            document.getElementById(`container-filme-${i}`).remove();
+        if (confirm("Você realmente deseja remover este jogador?")) {
+            document.getElementById(`container-jogador-${i}`).remove();
         }
     });
 }
-  
-
-// for (i = 0; i < listaNomeFilmes.length; i++) {
-// document.getElementById(`botao-remover-${i + 1}`).addEventListener("click", function() {idFilme = `olá, ${i + 1}`; console.log(idFilme)});
-// }
-
-// function removerFilme() {
-      
-    
-//     var filmeRemovido = document.getElementById("container-filme-2");
-
-//     filmeRemovido.remove();
-// }
-

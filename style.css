@@ -40,26 +40,26 @@ body {
   right: 10px;
 }
 
-.inserir-filme {
+.inserir-jogador {
   margin: 0 auto 2em;
 }
 
-.inserir-filme label {
+.inserir-jogador label {
   font-weight: bold;
 }
 
-.inserir-filme input,
-.inserir-filme label {
+.inserir-jogador input,
+.inserir-jogador label {
   display: block;
   margin: 0.6em auto;
 }
 
-.inserir-filme input {
+.inserir-jogador input {
   width: 25%;
   padding: 0.5em 0.2em;
 }
 
-.botao-inserir-filme {
+.botao-inserir-jogador {
   font-size: 1.1em;
   padding: 0.7em 1.4em;
   margin: 1em 0 0;
@@ -70,7 +70,7 @@ body {
   transition: all 0.5s;
 }
 
-.botao-inserir-filme:hover {
+.botao-inserir-jogador:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -79,29 +79,35 @@ img {
   max-height: 250px;
 }
 
-#container-todos-filmes {
+#container-todos-jogadores {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.container-filme {
+.container-jogador {
   max-width: 25%;
   display: inline;
   margin:0 1em 3em;
   position: relative;
 }
 
-.container-filme:hover img {
+.container-jogador img {
+  width: 200px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.container-jogador:hover img {
   transition: 0.3s;
   filter: brightness(0.3);
 }
 
-.container-filme p {
+.container-jogador p {
   max-width: 180px;
 }
 
-.ver-trailer {
+.ver-highlights {
   position: relative;
   bottom: calc(50% + 11.5px);
   visibility: hidden;
@@ -111,14 +117,14 @@ img {
   background-color: rgba(233, 211, 211, 0.4);
 }
 
-.ver-trailer a {
+.ver-highlights a {
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
   font-size: 1.2em;
 }
 
-.container-filme:hover .ver-trailer {
+.container-jogador:hover .ver-highlights {
   transition: 2s;
   visibility: visible;
 }
