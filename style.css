@@ -4,7 +4,8 @@
 }
 
 body {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Questrial', sans-serif;
+  word-spacing: 0.15em;
   text-align: center;
   background-image: url("https://caelum-online-public.s3.amazonaws.com/assets-imersaodev/background-aluraflix.png");
   background-color: #000000;
@@ -75,8 +76,18 @@ body {
   cursor: pointer;
 }
 
-img {
-  max-height: 250px;
+.container img {
+  height: 200px;
+}
+
+#logo-nba-1 {
+  float: left;
+  margin-left: 5%;
+}
+
+#logo-nba-2 {
+  float: right;
+  margin-right: 5%;
 }
 
 #container-todos-jogadores {
@@ -105,6 +116,7 @@ img {
 
 .container-jogador p {
   max-width: 180px;
+  font-size: 1.25em;
 }
 
 .ver-highlights {
@@ -121,7 +133,7 @@ img {
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 0.9em;
 }
 
 .container-jogador:hover .ver-highlights {
