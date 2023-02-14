@@ -76,16 +76,17 @@ body {
   cursor: pointer;
 }
 
-.container img {
+.container svg {
   height: 200px;
+  fill: #ffffff;
 }
 
-#logo-nba-1 {
+#logo-jordan {
   float: left;
   margin-left: 5%;
 }
 
-#logo-nba-2 {
+#logo-nike {
   float: right;
   margin-right: 5%;
 }
