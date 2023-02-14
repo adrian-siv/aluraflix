@@ -17,7 +17,7 @@ for (i = 0; i < listaImagemJogadores.length; i++) {
 document.write("</div>")
 
 function verificaLink() {
-    if (document.getElementById("imagem-jogador").value.endsWith(".jpg") == false && document.getElementById("imagem-jogador").value.endsWith(".png") == false) {
+    if (document.getElementById("imagem-jogador").value.endsWith(".jpg") == false && document.getElementById("imagem-jogador").value.endsWith(".png") == false && document.getElementById("imagem-jogador").value != "") {
         alert(`Você inseriu um formato errado de link.\nPor favor, insira a url correta no formato válido de imagem (.jpg ou .png).`);
         return false;
     } else {
@@ -26,43 +26,60 @@ function verificaLink() {
 }
 
 function inserirJogador() {
-        var nomeJogador = document.getElementById("nome-jogador").value;
-        var imagemJogador = document.getElementById("imagem-jogador").value;
-        var highlightsJogador = document.getElementById("highlights-jogador").value;
-        var jogadorRepetido = false;
+    var nomeJogador = document.getElementById("nome-jogador").value;
+    var imagemJogador = document.getElementById("imagem-jogador").value;
+    var highlightsJogador = document.getElementById("highlights-jogador").value;
+    var jogadorRepetido = false;
+    var camposPreenchidos = false;
 
-        for (let i = 0; i < listaNomeJogadores.length; i++) {
-            if (nomeJogador.toLowerCase() == listaNomeJogadores[i].toLowerCase()) {
-                alert("Os highlights deste jogador já estão em nosso catálogo ;)")
-                jogadorRepetido = true;
-                break;
-            }
+    for (let i = 0; i < listaNomeJogadores.length; i++) {
+        if (nomeJogador == "") {
+            alert("Por favor, insira o nome do jogador.")
+            break;
+        } else if (imagemJogador == "") {
+            alert("Por favor, insira o link da imagem do jogador.")
+            break;
+        } else if (highlightsJogador == "") {
+            alert("Por favor, insira o link dos highlights do jogador.")
+            break;
+        } else {
+            camposPreenchidos = true;
         }
+    }
 
-        if (jogadorRepetido == false && verificaLink()) {
-            listaNomeJogadores.push(nomeJogador);
-            listaImagemJogadores.push(imagemJogador);
-            listaHighlightsJogadores.push(highlightsJogador);
-
-            var containerTodosJogadores = document.getElementById("container-todos-jogadores");
-
-            containerTodosJogadores.innerHTML = containerTodosJogadores.innerHTML + `<div id='container-jogador-${i + 1}' class='container-jogador'></div>`;
-
-            var containerJogador = document.getElementById(`container-jogador-${i + 1}`);
-
-            containerJogador.innerHTML = `<img src=${imagemJogador}>`;
-            containerJogador.innerHTML = containerJogador.innerHTML + `<p class="nomes-jogadores">${nomeJogador}</p>`;
-            containerJogador.innerHTML = containerJogador.innerHTML + `<p class='ver-highlights'><a href="${listaHighlightsJogadores[i]}" target="_blank">Ver Highlights</a></p>`;          
-
-            i++;
+    for (let i = 0; i < listaNomeJogadores.length; i++) {
+        if (nomeJogador.toLowerCase() == listaNomeJogadores[i].toLowerCase()) {
+            alert("Os highlights deste jogador já estão em nosso catálogo ;)")
+            jogadorRepetido = true;
+            break;
         }
+    }
+
+    if (camposPreenchidos == true && jogadorRepetido == false && verificaLink()) {
+        listaNomeJogadores.push(nomeJogador);
+        listaImagemJogadores.push(imagemJogador);
+        listaHighlightsJogadores.push(highlightsJogador);
+
+        var containerTodosJogadores = document.getElementById("container-todos-jogadores");
+
+        containerTodosJogadores.innerHTML = containerTodosJogadores.innerHTML + `<div id='container-jogador-${i + 1}' class='container-jogador'></div>`;
+
+        var containerJogador = document.getElementById(`container-jogador-${i + 1}`);
+
+        containerJogador.innerHTML = `<img src=${imagemJogador}>`;
+        containerJogador.innerHTML = containerJogador.innerHTML + `<p class="nomes-jogadores">${nomeJogador}</p>`;
+        containerJogador.innerHTML = containerJogador.innerHTML + `<p class='ver-highlights'><a href="${listaHighlightsJogadores[i]}" target="_blank">Ver Highlights</a></p>`;
+
+        i++;
 
         document.getElementById("nome-jogador").value = "";
         document.getElementById("imagem-jogador").value = "";
         document.getElementById("highlights-jogador").value = "";
+    }
+    removerJogador();
 }
 
-
+function removerJogador() {
 for (let i = 1; i <= listaNomeJogadores.length; i++) {
     document.getElementById(`botao-remover-${i}`).addEventListener("click", function () {
         if (confirm("Você realmente deseja remover este jogador?")) {
@@ -70,3 +87,5 @@ for (let i = 1; i <= listaNomeJogadores.length; i++) {
         }
     });
 }
+}
+removerJogador();
