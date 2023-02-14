@@ -143,10 +143,27 @@ body {
 }
 
 .dica-remover {
-  visibility: hidden;
+  display: none;
+  position: absolute;
+  top: 0px;
+  background-color: #ffffff;
+  color: rgb(218, 30, 38);
 }
 
-.botao-remover, .dica-remover {
+/* #dica {
+  display: none;
+  position: absolute;
+  top: -60px;
+  z-index: 1;
+  background: #00732c;
+  padding: 8px;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 2px;
+  animation: fadeIn 0.6s;
+} */
+
+.botao-remover {
   position: absolute;
   bottom: calc(100% - 22px);
   right: calc(0% + 1px);
@@ -155,8 +172,4 @@ body {
   color: white;
   font-weight: bold;
   cursor: pointer;
-}
-
-.botao-remover:hover ~ .dica-remover {
-  visibility: visible;
 }
