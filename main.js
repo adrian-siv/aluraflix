@@ -64,9 +64,7 @@ function inserirJogador() {
 
         var containerJogador = document.getElementById(`container-jogador-${i + 1}`);
 
-        containerJogador.innerHTML = `<img src=${imagemJogador}>`;
-        containerJogador.innerHTML = containerJogador.innerHTML + `<p class="nomes-jogadores">${nomeJogador}</p>`;
-        containerJogador.innerHTML = containerJogador.innerHTML + `<p class='ver-highlights'><a href="${listaHighlightsJogadores[i]}" target="_blank">Ver Highlights</a></p>`;
+        containerJogador.innerHTML = `<img src=${imagemJogador}>` + `<p class="nomes-jogadores">${nomeJogador}</p>` +  `<p class='ver-highlights'><a href="${listaHighlightsJogadores[i]}" target="_blank">Ver Highlights</a></p>` + `<button title='Clique para remover' id='botao-remover-${i + 1}' class='botao-remover'>x</button>`;
 
         i++;
 
@@ -78,10 +76,12 @@ function inserirJogador() {
 }
 
 function removerJogador() {
-    for (let i = 1; i <= listaNomeJogadores.length; i++) {
-        document.getElementById(`botao-remover-${i}`).addEventListener("click", function () {
+    for (let j = 1; j <= listaNomeJogadores.length; j++) {
+        document.getElementById(`botao-remover-${j}`).addEventListener("click", function () {
             if (confirm("Você realmente deseja remover este jogador?")) {
-                document.getElementById(`container-jogador-${i}`).remove();
+                document.getElementById(`container-jogador-${j}`).remove();
+                listaNomeJogadores[j - 1] = "";
+                console.log(listaNomeJogadores)
             }
         });
     }
