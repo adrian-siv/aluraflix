@@ -137,6 +137,20 @@ body {
   font-size: 0.9em;
 }
 
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  text-align: center;
+}
+
+#lightbox a {
+  max-width: 940px;
+}
+
 .container-jogador:hover .ver-highlights {
   transition: 2s;
   visibility: visible;
@@ -149,19 +163,6 @@ body {
   background-color: #ffffff;
   color: rgb(218, 30, 38);
 }
-
-/* #dica {
-  display: none;
-  position: absolute;
-  top: -60px;
-  z-index: 1;
-  background: #00732c;
-  padding: 8px;
-  font-size: 1rem;
-  color: #fff;
-  border-radius: 2px;
-  animation: fadeIn 0.6s;
-} */
 
 .botao-remover {
   position: absolute;
