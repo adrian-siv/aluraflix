@@ -66,7 +66,7 @@ function inserirJogador() {
 
         var containerJogador = document.getElementById(`container-jogador-${i + 1}`);
 
-        containerJogador.innerHTML = `<img src=${imagemJogador}>` + `<p class="nomes-jogadores">${nomeJogador}</p>` +  `<p class='ver-highlights'><a href="${listaHighlightsJogadores[i]}" target="_blank">Ver Highlights</a></p>` + `<button title='Clique para remover' id='botao-remover-${i + 1}' class='botao-remover'>x</button>`;
+        containerJogador.innerHTML = `<img src=${imagemJogador}>` + `<p class="nomes-jogadores">${nomeJogador}</p>` + `<p class='ver-highlights'><a href="${listaHighlightsJogadores[i]}" target="_blank">Ver Highlights</a></p>` + `<button title='Clique para remover' id='botao-remover-${i + 1}' class='botao-remover'>x</button>`;
 
         i++;
 
