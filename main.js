@@ -18,7 +18,7 @@ document.write("</div>")
 
 function verificaLink() {
     if (document.getElementById("imagem-jogador").value.endsWith(".jpg") == false && document.getElementById("imagem-jogador").value.endsWith(".png") == false && document.getElementById("imagem-jogador").value != "") {
-        alert(`Você inseriu um formato errado de link.\nPor favor, insira a url correta no formato válido de imagem (.jpg ou .png).`);
+        alert(`Você inseriu um formato errado de link de imagem.\nPor favor, insira a url correta no formato válido de imagem (.jpg ou .png).`);
         return false;
     } else {
         return true
