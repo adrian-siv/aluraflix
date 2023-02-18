@@ -8,7 +8,7 @@ document.write("<div id='container-todos-jogadores'>")
 
 for (i = 0; i < listaImagemJogadores.length; i++) {
     document.write(`<div id='container-jogador-${i + 1}' class='container-jogador'>`)
-    document.write(`<img src =${listaImagemJogadores[i]}>`);
+    document.write(`<img src =${listaImagemJogadores[i]} alt="foto de ${listaNomeJogadores[i]}">`);
     document.write(`<p class='nomes-jogadores'>${listaNomeJogadores[i]}</p>`);
     document.write(`<p class='ver-highlights'><a href="${listaHighlightsJogadores[i]}" target="_blank">Ver Highlights</a></p>`)
     document.write(`<button title='Clique para remover' id='botao-remover-${i + 1}' class='botao-remover'>x</button>`)
