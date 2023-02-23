@@ -166,3 +166,13 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+
+/*--- CSS RESPONSIVO ---*/
+
+/*-- Telas até 480px --*/
+@media screen and (max-width: 480px) {
+
+  
+
+
+}
