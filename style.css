@@ -33,7 +33,7 @@ body {
 }
 
 .page-logo {
-  width: 200px;
+  width: 20%;
 }
 
 .alura-logo {
@@ -99,7 +99,7 @@ body {
 #container-todos-jogadores {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .container-jogador {
@@ -172,7 +172,16 @@ body {
 /*-- Telas até 480px --*/
 @media screen and (max-width: 480px) {
 
-  
+  #logo-nike {
+    fill: red;
+  }
 
+}
+
+@media screen and (min-width: 481px) and (max-width: 730px) {
+
+  #logo-nike {
+    fill: blue;
+  }
 
 }
